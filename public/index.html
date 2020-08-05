@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
+  <button type="button" onclick="submit()">submit</button>
+
+
+<script>
+	
+	
+	function submit() {
+		let string = document.getElementById("searchTxt").value;
+		const data = {string};
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		};
+		fetch('/play', options);
+
+		document.getElementById('searchTxt').value = '';
+	}
+	
+	
+</script>
+
+
+</body>
+</html>
